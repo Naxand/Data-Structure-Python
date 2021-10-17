@@ -91,39 +91,39 @@ def shell(A):
 def merge(A, l, m, r):
     """
     Algo name: Merge
-    input:
-    A -- Array
-    l -- first index position of the array
-    m -- middle index postion of the array calculated
+    input: (Входные данные)
+    A -- Array (Массив A)
+    l -- first index position of the array (первый индекс массива A)
+    m -- middle index postion of the array calculated (центральный индекс массива A)
          using l and r
-    r -- last index position of the array
+    r -- last index position of the array (последний индекс массива A)
 
-    returns Sorted partial array A
+    returns Sorted partial array A (возвращение отсортированного массива A)
     """
-    i = l
-    j = m + 1
-    k = l
-    B = [0] * (r + 1)
+    i = l   "начало цикла"
+    j = m + 1   "центр+1 цикла"
+    k = l   "начало цикла"
+    B = [0] * (r + 1)   "присвоение B массива с длинной массива A"
 
-    while i <= m and j <= r:
-        if A[i] < A[j]:
-            B[k] = A[i]
-            i = i + 1
-        else:
-            B[k] = A[j]
-            j = j + 1
-        k = k + 1
+    while i <= m and j <= r:    "пока счётчик i меньше или равен концу и счётчик j конца цикла меньше или равен последнему индексу(сортировка от начала до центра)"
+        if A[i] < A[j]: "если массив A число индекса i меньше индекса j" 
+            B[k] = A[i] "присвоить массиву B индексу k массив A индекс i"
+            i = i + 1   "+1 к счётчику"
+        else:   "иначе"
+            B[k] = A[j] "присвоить массиву B индексу k массив A индекс j"
+            j = j + 1   "+1 к счётчику"
+        k = k + 1   "перенос на следующий индекс массива B"
 
-    while i <= m:
-        B[k] = A[i]
-        i = i + 1
-        k = k + 1
-    while j <= r:
-        B[k] = A[j]
-        j = j + 1
-        k = k + 1
-    for x in range(l, r + 1):
-        A[x] = B[x]
+    while i <= m:  " пока счётчик i меньше или равен середине цикла 
+        B[k] = A[i] "присвоить массиву B индексу k массив A индекс i"
+        i = i + 1   "+1 к счётчику"
+        k = k + 1   "+1 к счётчику"
+    while j <= r:   " пока счётчик меньше или равен середине цикла 
+        B[k] = A[j] "присвоить массиву B индексу k массив A индекс i"
+        j = j + 1   "+1 к счётчику" 
+        k = k + 1   "+1 к счётчику" 
+    for x in range(l, r + 1):   " цикл записи отсортированного массива A 
+        A[x] = B[x] " запись отсортированного массива A 
 
 
 def mergesort(A, left, right):
