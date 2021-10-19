@@ -89,17 +89,6 @@ def shell(A):
 
 
 def merge(A, l, m, r):
-    """
-    Algo name: Merge
-    input: (Входные данные)
-    A -- Array (Массив A)
-    l -- first index position of the array (первый индекс массива A)
-    m -- middle index postion of the array calculated (центральный индекс массива A)
-         using l and r
-    r -- last index position of the array (последний индекс массива A)
-
-    returns Sorted partial array A (возвращение отсортированного массива A)
-    """
     i = l  
     j = m + 1   
     k = l   
